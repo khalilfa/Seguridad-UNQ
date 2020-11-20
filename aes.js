@@ -37,7 +37,7 @@ const app = () => {
 
     // get password's md5 hash
     let password_hash = createPasswordHash(password);
-    console.log('Key = ', password_hash); // 098F6BCD4621D373CADE4E832627B4F6
+    console.log('Key = ', password_hash);
 
     // our data to encrypt
     let data = fs.readFileSync(file);
@@ -52,7 +52,7 @@ const app = () => {
     console.log('Encrypted data = ', encryptedData);
 
     // Create a file with encrypt data 
-    const savedFile = fs.writeFileSync('encrypt-data.txt', encryptedData);
+    const savedFile = fs.writeFileSync('encrypted-data.txt', encryptedData);
 
     // decrypt data
     const decryptData = decrypt(encryptedData, algorithm, password_hash);
